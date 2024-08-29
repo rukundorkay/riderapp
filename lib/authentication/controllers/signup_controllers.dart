@@ -11,6 +11,7 @@ class SignupController extends GetxController {
   final TextEditingController email = TextEditingController();
   final TextEditingController phone = TextEditingController();
   final TextEditingController gender = TextEditingController();
+   final formKey = GlobalKey<FormState>();
 
   createUser() {
     final isUsed = AuthService.to.isEmailOrPhoneUsed(email.text, phone.text);

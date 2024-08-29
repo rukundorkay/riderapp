@@ -9,6 +9,7 @@ class NewPasswordController extends GetxController {
   final TextEditingController password = TextEditingController();
   final TextEditingController confirmPassword = TextEditingController();
   late User user;
+ final  formKey = GlobalKey<FormState>();
 
   @override
   void onInit() async {

@@ -8,12 +8,14 @@ class AppTextInputField extends StatefulWidget {
     required this.hint,
     this.keyboardType,
     this.controller,
+    this.validator,
   });
   final bool isPassword;
   final String hint;
   final TextEditingController? controller;
 
   final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
 
   @override
   State<AppTextInputField> createState() => _AppTextInputFieldState();
@@ -28,10 +30,12 @@ class _AppTextInputFieldState extends State<AppTextInputField> {
       children: [
         Expanded(
           child: TextFormField(
+            validator: widget.validator,
             controller: widget.controller,
             keyboardType: widget.keyboardType,
             obscureText: isSuffixOnTapped ? isobscure : widget.isPassword,
             decoration: InputDecoration(
+              
               suffixIcon: widget.isPassword
                   ? IconButton(
                       onPressed: () {
