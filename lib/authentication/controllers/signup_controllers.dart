@@ -19,6 +19,6 @@ class SignupController extends GetxController {
       gender: gender.text,
       password: '',
     );
-   
+    Get.toNamed(Routes.newPasword, arguments: {'user': user});
   }
 }

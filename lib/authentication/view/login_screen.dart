@@ -5,7 +5,7 @@ import 'package:riderapp/routes/app_pages.dart';
 import 'package:riderapp/shared/shared.dart';
 import 'package:riderapp/shared/widget/dividerWithText.dart';
 
-class LoginScreen extends GetView<WelcomeController> {
+class LoginScreen extends GetView<LoginController> {
   const LoginScreen({super.key});
 
   @override
@@ -31,14 +31,16 @@ class LoginScreen extends GetView<WelcomeController> {
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
-              const AppTextInputField(
+              AppTextInputField(
+                controller: controller.identifier,
                 hint: "Email or phone Number",
                 isPassword: false,
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
-              const AppTextInputField(
+              AppTextInputField(
+                controller: controller.password,
                 hint: "password",
                 isPassword: true,
               ),
@@ -60,7 +62,7 @@ class LoginScreen extends GetView<WelcomeController> {
               ),
               AppButton(
                 onpressed: () {
-                  Get.toNamed(Routes.home);
+                  controller.signin();
                 },
                 label: "Sign In",
                 hasBorder: false,

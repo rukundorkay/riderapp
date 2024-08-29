@@ -108,7 +108,9 @@ class SignupScreen extends GetView<SignupController> {
               AppButton(
                 label: "Sign Up",
                 hasBorder: false,
-                onpressed: () {},
+                onpressed: () {
+                  controller.createUser();
+                },
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,

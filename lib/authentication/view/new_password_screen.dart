@@ -13,35 +13,37 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(AppStyles.spaceDefault),
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Set New Password",
                 style: TextStyle(
                   fontSize: AppStyles.spaceMedium,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
               AppTextInputField(
+                controller: controller.password,
                 hint: "Enter your Password",
                 isPassword: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
               AppTextInputField(
+                controller: controller.confirmPassword,
                 hint: "confirm password",
                 isPassword: true,
               ),
-              SizedBox(height: AppStyles.spaceDefault),
-              Row(
+              const SizedBox(height: AppStyles.spaceDefault),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
@@ -53,10 +55,13 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
               AppButton(
+                onpressed: () {
+                  controller.createUser();
+                },
                 label: "Save",
                 hasBorder: false,
               ),
