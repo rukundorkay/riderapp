@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const Color primary = Color(0xff03284C);
-
-  static Color secondary = Color(0xffffffff);
+  static const Color primary = Color(0xff008955);
+  static const Color secondary = Color(0xffffffff);
+  static const Color afternoonGrey = Color(0xff414141);
+  static const Color shadeOFGrey = Color(0xffA0A0A0);
+  static const Color transparent = Colors.transparent;
 }
 
 class AppStyles {
@@ -24,7 +26,7 @@ class AppStyles {
   static const double spaceSmall = 12;
 
   /// Main padding/margin value.
-  static const double spaceDefault = 14;
+  static const double spaceDefault = 16;
 
   /// Medium padding/margin value.
   static const double spaceMedium = 24;

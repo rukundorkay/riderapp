@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
-import 'package:riderapp/onboard/bindings/onboard_bidings.dart';
-import 'package:riderapp/onboard/view/onboard_screen.dart';
+import 'package:riderapp/authentication/authentication.dart';
+import 'package:riderapp/onboard/onboard.dart';
+
 part 'app_routes.dart';
 
 class AppPages {
@@ -12,11 +13,11 @@ class AppPages {
       page: () => const OnboardScreen(),
       binding: OnboardBidings(),
     ),
-    // GetPage(
-    //   name: _Paths.ResetPasswordOTP,
-    //   page: () => ResetPasswordOTPPage(),
-    //   binding: ResetPasswordOtpBinding(),
-    // ),
+    GetPage(
+      name: _Paths.welcome,
+      page: () => const WelcomeScreen(),
+      binding: WelcomeBindings(),
+    ),
   ];
 
   AppPages._();
