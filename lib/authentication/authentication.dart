@@ -9,3 +9,5 @@ export 'bindings/login_bindings.dart';
 export 'bindings/signup_bindings copy.dart';
 export 'controllers/Login_controllers.dart';
 export 'controllers/signup_controllers.dart';
+export 'controllers/new_password.dart';
+export 'bindings/new_password_bindings.dart';

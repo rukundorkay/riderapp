@@ -7,9 +7,11 @@ class AppTextInputField extends StatefulWidget {
     this.isPassword = false,
     required this.hint,
     this.keyboardType,
+    this.controller,
   });
   final bool isPassword;
   final String hint;
+  final TextEditingController? controller;
 
   final TextInputType? keyboardType;
 
@@ -26,6 +28,7 @@ class _AppTextInputFieldState extends State<AppTextInputField> {
       children: [
         Expanded(
           child: TextFormField(
+            controller: widget.controller,
             keyboardType: widget.keyboardType,
             obscureText: isSuffixOnTapped ? isobscure : widget.isPassword,
             decoration: InputDecoration(

@@ -58,7 +58,10 @@ class LoginScreen extends GetView<WelcomeController> {
               const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
-              const AppButton(
+              AppButton(
+                onpressed: () {
+                  Get.toNamed(Routes.home);
+                },
                 label: "Sign In",
                 hasBorder: false,
               ),

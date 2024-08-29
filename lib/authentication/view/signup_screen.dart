@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riderapp/authentication/authentication.dart';
 import 'package:riderapp/routes/app_pages.dart';
+
 import 'package:riderapp/shared/shared.dart';
 import 'package:riderapp/shared/widget/dividerWithText.dart';
 
-class SignupScreen extends GetView<WelcomeController> {
+class SignupScreen extends GetView<SignupController> {
   const SignupScreen({super.key});
 
   @override
@@ -28,27 +29,31 @@ class SignupScreen extends GetView<WelcomeController> {
               const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
-              const AppTextInputField(
+              AppTextInputField(
+                controller: controller.name,
                 hint: "Name",
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
-              const AppTextInputField(
+              AppTextInputField(
+                controller: controller.email,
                 hint: "Email",
                 isPassword: false,
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
-              const AppTextInputField(
+              AppTextInputField(
+                controller: controller.phone,
                 hint: "phone Number",
                 isPassword: false,
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
-              const AppTextInputField(
+              AppTextInputField(
+                controller: controller.gender,
                 hint: "Gender",
                 isPassword: false,
               ),
@@ -100,9 +105,10 @@ class SignupScreen extends GetView<WelcomeController> {
               const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
-              const AppButton(
+              AppButton(
                 label: "Sign Up",
                 hasBorder: false,
+                onpressed: () {},
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
