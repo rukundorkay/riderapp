@@ -5,11 +5,26 @@ import 'package:riderapp/shared/models/user.dart';
 class AuthService extends GetxService {
   static AuthService to = Get.find();
   final GetStorage _storage = GetStorage('Rideapp');
+  late User currentUser;
+
+  // Check if email or phone number is already used
+  bool isEmailOrPhoneUsed(String email, String phoneNumber) {
+    final userData = _storage.read<String>('user');
+    if (userData != null) {
+      final storedUser = User.fromJsonString(userData);
+      return storedUser.email == email || storedUser.phoneNumber == phoneNumber;
+    }
+    return false;
+  }
 
   // Save user to GetStorage
-  void saveUser(User user) {
-    _storage.write('user', user.toJsonString());
-    _storage.write('isLoggedIn', true); // Mark user as logged in
+  bool saveUser(User user) {
+    if (!isEmailOrPhoneUsed(user.email, user.phoneNumber)) {
+      _storage.write('user', user.toJsonString());
+      _storage.write('isLoggedIn', true); // Mark user as logged in
+      return true;
+    }
+    return false; // Email or phone number already used
   }
 
   // Retrieve user from GetStorage
@@ -21,10 +36,13 @@ class AuthService extends GetxService {
     return null;
   }
 
-  // Perform login (check if the user exists and credentials match)
-  bool login(String email, String password) {
+  // Perform login (check if the user exists and credentials match by email or phone number)
+  bool login(String identifier, String password) {
     final user = getUser();
-    if (user != null && user.email == email && user.password == password) {
+    if (user != null &&
+        (user.email == identifier || user.phoneNumber == identifier) &&
+        user.password == password) {
+      currentUser = user;
       _storage.write('isLoggedIn', true); // Mark user as logged in
       return true;
     }

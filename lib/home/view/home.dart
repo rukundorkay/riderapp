@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:riderapp/home/home.dart';
+import 'package:riderapp/shared/services/AuthService.dart';
 import 'package:riderapp/shared/shared.dart';
 
 class HomeScreen extends GetView<HomeControllers> {
@@ -42,15 +43,15 @@ class HomeScreen extends GetView<HomeControllers> {
                       const SizedBox(
                         height: 16,
                       ),
-                      const Text(
-                        "Nate Samson",
-                        style: TextStyle(
+                      Text(
+                        AuthService.to.currentUser.name,
+                        style: const TextStyle(
                             color: AppColors.afternoonGrey,
                             fontSize: AppStyles.spaceDefault + 2),
                       ),
-                      const Text(
-                        "nate@mail.com",
-                        style: TextStyle(
+                      Text(
+                        AuthService.to.currentUser.email,
+                        style: const TextStyle(
                           color: AppColors.afternoonGrey,
                           fontSize: AppStyles.spaceSmall,
                         ),
