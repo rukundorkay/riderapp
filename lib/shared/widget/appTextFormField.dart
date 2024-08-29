@@ -9,13 +9,14 @@ class AppTextInputField extends StatefulWidget {
     this.keyboardType,
     this.controller,
     this.validator,
+    this.maxlines=1,
   });
   final bool isPassword;
   final String hint;
   final TextEditingController? controller;
-
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
+  final int? maxlines;
 
   @override
   State<AppTextInputField> createState() => _AppTextInputFieldState();
@@ -30,12 +31,12 @@ class _AppTextInputFieldState extends State<AppTextInputField> {
       children: [
         Expanded(
           child: TextFormField(
+            maxLines: widget.maxlines,
             validator: widget.validator,
             controller: widget.controller,
             keyboardType: widget.keyboardType,
             obscureText: isSuffixOnTapped ? isobscure : widget.isPassword,
             decoration: InputDecoration(
-              
               suffixIcon: widget.isPassword
                   ? IconButton(
                       onPressed: () {

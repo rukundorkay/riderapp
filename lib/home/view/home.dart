@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:riderapp/home/home.dart';
+import 'package:riderapp/routes/app_pages.dart';
 import 'package:riderapp/shared/services/AuthService.dart';
 import 'package:riderapp/shared/shared.dart';
 
@@ -67,7 +68,10 @@ class HomeScreen extends GetView<HomeControllers> {
                   link: AppAssets.history,
                 ),
                 const Divider(),
-                const DrawerMenu(
+                DrawerMenu(
+                  onTap: () {
+                    Get.toNamed(Routes.complain);
+                  },
                   name: "Complain",
                   link: AppAssets.complain,
                 ),

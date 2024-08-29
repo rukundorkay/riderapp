@@ -1,27 +1,26 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riderapp/shared/styles.dart';
 
-AppBar globalAuthAppBar() {
-    return AppBar(
-      leading: GestureDetector(
-        onTap: () {
-          Get.back();
-        },
-        child: const Icon(
-          Icons.arrow_back_ios,
-          color: AppColors.afternoonGrey,
-          size: 24,
-        ),
+AppBar globalAuthAppBar({String? title, bool isCenter=false}) {
+  return AppBar(
+    leading: GestureDetector(
+      onTap: () {
+        Get.back();
+      },
+      child: const Icon(
+        Icons.arrow_back_ios,
+        color: AppColors.afternoonGrey,
+        size: 24,
       ),
-      title: const Text(
-        "Back",
-        style: TextStyle(
-          fontSize: AppStyles.spaceDefault,
-        ),
+    ),
+    title: Text(
+      title ?? "Back",
+      style: const TextStyle(
+        fontSize: AppStyles.spaceDefault,
       ),
-      centerTitle: false,
-      backgroundColor: AppColors.secondary,
-    );
-  }
-
+    ),
+    centerTitle: isCenter,
+    backgroundColor: AppColors.secondary,
+  );
+}

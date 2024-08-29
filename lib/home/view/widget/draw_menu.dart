@@ -7,9 +7,11 @@ class DrawerMenu extends StatelessWidget {
     super.key,
     required this.link,
     required this.name,
+    this.onTap,
   });
   final String name;
   final String link;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +30,10 @@ class DrawerMenu extends StatelessWidget {
         style: const TextStyle(
             fontSize: AppStyles.spaceSmall, color: AppColors.afternoonGrey),
       ),
-      onTap: () {
-        Navigator.pop(context); // Close the drawer
-      },
+      onTap: onTap ??
+          () {
+            Navigator.pop(context); // Close the drawer
+          },
     );
   }
 }

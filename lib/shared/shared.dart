@@ -5,3 +5,6 @@ export 'widget/svg_picture.dart';
 export 'widget/globalAppBar.dart';
 export 'widget/appTextFormField.dart';
 export 'widget/appButton.dart';
+export 'widget/appDropDownFormField.dart';
+export 'models/complain.dart';
+export 'models/user.dart';
