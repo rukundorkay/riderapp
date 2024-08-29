@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riderapp/home/home.dart';
 import 'package:riderapp/shared/shared.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -21,24 +22,42 @@ class LocationSearchWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width - 32,
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                borderRadius:
-                    const BorderRadius.all(Radius.circular(AppStyles.radius)),
-                color: AppColors.veryLightGreen,
-                border: Border.all(
-                  color: AppColors.primary,
-                )),
-            child: const ListTile(
-              leading: MySvgPicture(AppAssets.search, height: 30),
-              title: Text(
-                "where would you go?",
-                style: TextStyle(
-                  fontSize: 16,
-                  color: AppColors.shadeOFGrey,
+          InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                isScrollControlled: true,
+                backgroundColor: AppColors.secondary,
+                context: context,
+                builder: (BuildContext context) {
+                  // Calculate the dynamic height of the bottom sheet based on the keyboard visibility
+                  double keyboardHeight =
+                      MediaQuery.of(context).viewInsets.bottom;
+                  double sheetHeight = MediaQuery.of(context).size.height / 1.7;
+
+                  return LocationBottomSheet(
+                      keyboardHeight: keyboardHeight, sheetHeight: sheetHeight);
+                },
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius:
+                      const BorderRadius.all(Radius.circular(AppStyles.radius)),
+                  color: AppColors.veryLightGreen,
+                  border: Border.all(
+                    color: AppColors.primary,
+                  )),
+              child: const ListTile(
+                leading: MySvgPicture(AppAssets.search, height: 30),
+                title: Text(
+                  "where would you go?",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.shadeOFGrey,
+                  ),
                 ),
+                trailing: MySvgPicture(AppAssets.heart, height: 30),
               ),
-              trailing: MySvgPicture(AppAssets.heart, height: 30),
             ),
           ),
           const SizedBox(

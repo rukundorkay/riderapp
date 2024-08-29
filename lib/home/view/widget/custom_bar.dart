@@ -36,41 +36,43 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    const items = [
+    final items = [
       CustomBottomBarItem(
-        icon: MySvgPicture(
+        icon: const MySvgPicture(
           AppAssets.house,
           height: 30,
         ),
-        title: Text('Home'),
+        title: const Text('Home'),
+        isSelected: true,
       ),
       CustomBottomBarItem(
-        icon: MySvgPicture(
+        icon: const MySvgPicture(
           AppAssets.heart,
           height: 30,
         ),
-        title: Text('Favorites'),
+        title: const Text('Favorites'),
       ),
       CustomBottomBarItem(
-        icon: Icon(
+        icon: const Icon(
           Icons.wallet,
-          size: 20,
+          color: AppColors.borderGrey,
+          size: 30,
         ),
-        title: Text('Wallet'),
+        title: const Text('Wallet'),
       ),
       CustomBottomBarItem(
-        icon: MySvgPicture(
+        icon: const MySvgPicture(
           AppAssets.discounts,
           height: 30,
         ),
-        title: Text('Offer'),
+        title: const Text('Offer'),
       ),
       CustomBottomBarItem(
-        icon: MySvgPicture(
+        icon: const MySvgPicture(
           AppAssets.user,
           height: 30,
         ),
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
     ];
     return
@@ -161,12 +163,13 @@ class CustomBottomBar extends StatelessWidget {
                                   height: 30,
                                   child: DefaultTextStyle(
                                     style: TextStyle(
-                                      color: Color.lerp(
+                                      color:  Color.lerp(
                                         _selectedColor.withOpacity(0),
                                         _selectedColor,
                                         t,
                                       ),
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
                                     ),
                                     child: item.title,
                                   ),
@@ -192,12 +195,13 @@ class CustomBottomBar extends StatelessWidget {
 /// A model that holds the data required for a single tab of [CustomBottomBar].
 class CustomBottomBarItem {
   /// Initializes a new [CustomBottomBarItem].
-  const CustomBottomBarItem({
+  CustomBottomBarItem({
     required this.icon,
     required this.title,
     this.selectedColor,
     this.unselectedColor,
     this.activeIcon,
+    this.isSelected = false,
   });
 
   /// An icon to display.
@@ -214,4 +218,6 @@ class CustomBottomBarItem {
 
   /// The color to display when this tab is not selected.
   final Color? unselectedColor;
+
+  final bool isSelected;
 }

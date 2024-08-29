@@ -6,3 +6,5 @@ export 'view/widget/locationSearchWidget.dart';
 export 'view/widget/menu.dart';
 export 'view/widget/notifications.dart';
 export 'view/widget/rental_button.dart';
+export 'view/widget/draw_menu.dart';
+export 'view/widget/location_bottom_sheet.dart';

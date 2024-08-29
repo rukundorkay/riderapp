@@ -103,12 +103,12 @@ class HomeScreen extends GetView<HomeControllers> {
             children: [
               GoogleMap(
                 initialCameraPosition: const CameraPosition(
-                  target: LatLng(37.43296265331129, -122.08832357078792),
+                  target: LatLng(1.9512, 30.0600),
                   zoom: 12.4746,
                 ),
                 markers: {
                   const Marker(
-                    position: LatLng(37.43296265331129, -122.08832357078792),
+                    position: LatLng(1.9512, 30.0600),
                     markerId: MarkerId('riderLocation'),
                     // icon: passangerIcon,
                     infoWindow: InfoWindow(
@@ -129,39 +129,6 @@ class HomeScreen extends GetView<HomeControllers> {
         ],
       ),
       bottomSheet: const CustomBottomBar(),
-    );
-  }
-}
-
-class DrawerMenu extends StatelessWidget {
-  const DrawerMenu({
-    super.key,
-    required this.link,
-    required this.name,
-  });
-  final String name;
-  final String link;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      minVerticalPadding: 0,
-      minTileHeight: 40,
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: AppStyles.spaceDefault,
-      ),
-      leading: MySvgPicture(
-        link,
-        height: AppStyles.spaceDefault,
-      ),
-      title: Text(
-        name,
-        style: const TextStyle(
-            fontSize: AppStyles.spaceSmall, color: AppColors.afternoonGrey),
-      ),
-      onTap: () {
-        Navigator.pop(context); // Close the drawer
-      },
     );
   }
 }
