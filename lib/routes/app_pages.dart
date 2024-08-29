@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:riderapp/authentication/authentication.dart';
+import 'package:riderapp/complain/bindings/complain_bindings.dart';
+import 'package:riderapp/complain/view/complain_screen.dart';
 import 'package:riderapp/home/home.dart';
 import 'package:riderapp/onboard/onboard.dart';
 
@@ -38,6 +40,11 @@ class AppPages {
       name: _Paths.newPassword,
       page: () => const NewPasswordScreen(),
       binding: NewPasswordBindings(),
+    ),
+    GetPage(
+      name: _Paths.complain,
+      page: () => const ComplainScreen(),
+      binding: ComplainBindings(),
     ),
   ];
 

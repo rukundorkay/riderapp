@@ -61,8 +61,8 @@ class LoginScreen extends GetView<LoginController> {
                 height: AppStyles.spaceLarge,
               ),
               AppButton(
-                onpressed: () {
-                  controller.signin();
+                onpressed: () async {
+                  await controller.signin();
                 },
                 label: "Sign In",
                 hasBorder: false,
