@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:riderapp/complain/complain.dart';
+import 'package:riderapp/shared/services/ComplainService.dart';
 import 'package:riderapp/shared/shared.dart';
 import 'package:intl/intl.dart';
 
@@ -6,8 +9,10 @@ class UserReview extends StatelessWidget {
   const UserReview({
     super.key,
     required this.complain,
+    required this.controller,
   });
   final Complain complain;
+  final ComplainController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -34,21 +39,102 @@ class UserReview extends StatelessWidget {
                   ),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 flex: 1,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(
-                      Icons.edit,
-                      size: 20,
+                    InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            TextEditingController description =
+                                TextEditingController(
+                                    text: complain.description);
+                            return AlertDialog(
+                              backgroundColor: AppColors.secondary,
+                              title: const Text(
+                                "Edit My Complain",
+                                style: TextStyle(
+                                  fontSize: AppStyles.spaceDefault,
+                                  color: AppColors.afternoonGrey,
+                                ),
+                              ),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  AppDropdownField(
+                                      onChanged: (value) => controller
+                                          .selectedValue.value = value!,
+                                      value: complain.type,
+                                      items: ComplainType.values
+                                          .map((ComplainType type) {
+                                        return DropdownMenuItem<ComplainType>(
+                                          value: type,
+                                          child:
+                                              Text(getComplainTypeString(type)),
+                                        );
+                                      }).toList(),
+                                      hint: 'Drop down'),
+                                  const SizedBox(
+                                    height: AppStyles.spaceDefault,
+                                  ),
+                                  AppTextInputField(
+                                    controller: description,
+                                    hint:
+                                        'Write your complain here (minimum 10 characters)',
+                                    maxlines: 6,
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'This field is required';
+                                      } else if (value.length < 10) {
+                                        return 'Complaint must be at least 10 characters long';
+                                      }
+                                      return null; // Input is valid
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    height: AppStyles.spaceDefault,
+                                  ),
+                                  AppButton(
+                                    label: "Save",
+                                    hasBorder: false,
+                                    onpressed: () {
+                                      ComplainService.to.editComplain(
+                                        complain.uuid,
+                                        complain.copyWith(
+                                          type: controller.selectedValue.value,
+                                          description: description.text,
+                                          time: DateTime.now(),
+                                        ),
+                                      );
+                                      Get.back();
+                                    },
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: const Icon(
+                        Icons.edit,
+                        size: 20,
+                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Icon(
-                      Icons.delete,
+                    InkWell(
+                      onTap: () {
+                        ComplainService.to.deleteComplain(complain.uuid);
+                      },
+                      child: const Icon(
+                        Icons.delete,
+                        color: AppColors.LightRed,
+                      ),
                     )
                   ],
                 ),

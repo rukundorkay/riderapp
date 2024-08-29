@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riderapp/routes/app_pages.dart';
-import 'package:riderapp/shared/models/user.dart';
 import 'package:riderapp/shared/services/AuthService.dart';
 import 'package:riderapp/shared/shared.dart';
 import 'package:uuid/uuid.dart';

@@ -25,4 +25,6 @@ class AppAssets {
   static const String settings = 'assets/svg/settings.svg';
   static const String discounts = 'assets/svg/discount.svg';
   static const String notification = 'assets/svg/notificaton.svg';
+  static const String star = 'assets/svg/star.svg';
+  static const String placeIndicate = 'assets/png/placeIndicate.png';
 }

@@ -9,7 +9,8 @@ class AppTextInputField extends StatefulWidget {
     this.keyboardType,
     this.controller,
     this.validator,
-    this.maxlines=1,
+    this.maxlines = 1,
+    this.initialValue,
   });
   final bool isPassword;
   final String hint;
@@ -17,6 +18,7 @@ class AppTextInputField extends StatefulWidget {
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final int? maxlines;
+  final String? initialValue;
 
   @override
   State<AppTextInputField> createState() => _AppTextInputFieldState();
@@ -31,6 +33,7 @@ class _AppTextInputFieldState extends State<AppTextInputField> {
       children: [
         Expanded(
           child: TextFormField(
+            initialValue: widget.initialValue,
             maxLines: widget.maxlines,
             validator: widget.validator,
             controller: widget.controller,

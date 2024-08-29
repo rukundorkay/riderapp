@@ -112,11 +112,12 @@ class HomeScreen extends GetView<HomeControllers> {
                   zoom: 12.4746,
                 ),
                 markers: {
-                  const Marker(
-                    position: LatLng(1.9512, 30.0600),
-                    markerId: MarkerId('riderLocation'),
+                  Marker(
+                    icon: controller.carIcon.value,
+                    position: const LatLng(1.9512, 30.0600),
+                    markerId: const MarkerId('riderLocation'),
                     // icon: passangerIcon,
-                    infoWindow: InfoWindow(
+                    infoWindow: const InfoWindow(
                       title: 'My Current location',
                       snippet: 'ME',
                     ),

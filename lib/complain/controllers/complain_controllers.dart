@@ -8,6 +8,7 @@ import 'package:uuid/uuid.dart';
 class ComplainController extends GetxController {
   final selectedValue = ComplainType.vehicleArrivedLate.obs;
   final TextEditingController description = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   @override
   void onInit() async {
     ComplainService.to.onInit();
