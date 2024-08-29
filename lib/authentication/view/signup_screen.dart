@@ -5,8 +5,8 @@ import 'package:riderapp/routes/app_pages.dart';
 import 'package:riderapp/shared/shared.dart';
 import 'package:riderapp/shared/widget/dividerWithText.dart';
 
-class LoginScreen extends GetView<WelcomeController> {
-  const LoginScreen({super.key});
+class SignupScreen extends GetView<WelcomeController> {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class LoginScreen extends GetView<WelcomeController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Sign in with your email or phone number",
+                "Sign up with your email or phone number",
                 style: TextStyle(
                   fontSize: AppStyles.spaceMedium,
                   fontWeight: FontWeight.w500,
@@ -28,38 +28,80 @@ class LoginScreen extends GetView<WelcomeController> {
               const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
+              const AppTextInputField(
+                hint: "Name",
+              ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
               const AppTextInputField(
-                hint: "Email or phone Number",
+                hint: "Email",
                 isPassword: false,
               ),
               const SizedBox(
                 height: AppStyles.spaceDefault,
               ),
               const AppTextInputField(
-                hint: "password",
-                isPassword: true,
+                hint: "phone Number",
+                isPassword: false,
               ),
-              const SizedBox(height: AppStyles.spaceDefault),
+              const SizedBox(
+                height: AppStyles.spaceDefault,
+              ),
+              const AppTextInputField(
+                hint: "Gender",
+                isPassword: false,
+              ),
+              const SizedBox(
+                height: AppStyles.spaceLarge,
+              ),
               const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    "Forget password?",
-                    style: TextStyle(
-                      fontSize: AppStyles.spaceDefault - 2,
-                      color: AppColors.LightRed,
-                    ),
+                  Icon(
+                    Icons.verified,
+                    color: AppColors.primary,
                   ),
+                  SizedBox(
+                    width: AppStyles.spaceTiny,
+                  ),
+                  Expanded(
+                      child: Wrap(
+                    children: [
+                      Text(
+                        "By signing up. you agree to ",
+                        style: TextStyle(
+                          color: AppColors.shadeOFGrey,
+                          fontSize: AppStyles.spaceSmall,
+                        ),
+                      ),
+                      Text(
+                        "the Terms of service",
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: AppStyles.spaceSmall,
+                        ),
+                      ),
+                      Text(" and ",
+                          style: TextStyle(
+                            color: AppColors.shadeOFGrey,
+                            fontSize: AppStyles.spaceSmall,
+                          )),
+                      Text(
+                        "Privacy policy.",
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: AppStyles.spaceSmall,
+                        ),
+                      ),
+                    ],
+                  ))
                 ],
               ),
               const SizedBox(
                 height: AppStyles.spaceLarge,
               ),
               const AppButton(
-                label: "Sign In",
+                label: "Sign Up",
                 hasBorder: false,
               ),
               const SizedBox(
@@ -74,19 +116,19 @@ class LoginScreen extends GetView<WelcomeController> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.toNamed(Routes.signup);
+                      Get.toNamed(Routes.login);
                     },
                     child: const Wrap(
                       children: [
                         Text(
-                          "Don't have an account? ",
+                          "Already Have an account? ",
                           style: TextStyle(
                             fontSize: AppStyles.spaceDefault,
                             color: AppColors.afternoonGrey,
                           ),
                         ),
                         Text(
-                          "Sign Up",
+                          "Sign",
                           style: TextStyle(
                             fontSize: AppStyles.spaceDefault,
                             color: AppColors.primary,

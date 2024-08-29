@@ -18,6 +18,16 @@ class AppPages {
       page: () => const WelcomeScreen(),
       binding: WelcomeBindings(),
     ),
+    GetPage(
+      name: _Paths.signup,
+      page: () => const SignupScreen(),
+      binding: SignupBindings(),
+    ),
+    GetPage(
+      name: _Paths.login,
+      page: () => const LoginScreen(),
+      binding: LoginBindings(),
+    ),
   ];
 
   AppPages._();

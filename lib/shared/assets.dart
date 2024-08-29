@@ -10,5 +10,5 @@ class AppAssets {
   static const String controller2 = 'assets/svg/controller2.svg';
   static const String controller1 = 'assets/svg/controller1.svg';
   static const String go = 'assets/svg/go.svg';
-  static const String welcomeScreen = 'assets/png/welcomeScreen.png';
+  static const String welcomeScreen = 'assets/svg/welcomeScreen.svg';
 }

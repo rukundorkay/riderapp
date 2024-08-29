@@ -1,7 +1,11 @@
 export 'view/login_screen.dart';
 export 'view/new_password_screen.dart';
 export 'view/otp_screen.dart';
-export 'view/signup_scree.dart';
+export 'view/signup_screen.dart';
 export 'view/welcome_screen.dart';
 export 'controllers/welcome_controllers.dart';
 export 'bindings/welcome_bindings.dart';
+export 'bindings/login_bindings.dart';
+export 'bindings/signup_bindings copy.dart';
+export 'controllers/Login_controllers.dart';
+export 'controllers/signup_controllers.dart';

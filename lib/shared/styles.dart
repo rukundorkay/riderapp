@@ -8,6 +8,9 @@ class AppColors {
   static const Color afternoonGrey = Color(0xff414141);
   static const Color shadeOFGrey = Color(0xffA0A0A0);
   static const Color transparent = Colors.transparent;
+  static const Color borderGrey = Color(0xffB8B8B8);
+  static const Color hintColor = Color(0xffD0D0D0);
+  static const Color LightRed = Color(0xffF44336);
 }
 
 class AppStyles {
