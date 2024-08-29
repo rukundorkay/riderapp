@@ -25,9 +25,9 @@ class Menu extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(AppStyles.radius)),
             color: AppColors.lightGreen,
           ),
-          child: const Icon(
-            Icons.list,
-            size: 30,
+          child: const MySvgPicture(
+            AppAssets.hamburger,
+            height: 30,
           ),
         ),
       ),

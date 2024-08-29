@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:riderapp/home/home.dart';
-
+import 'package:riderapp/shared/shared.dart';
 
 class HomeScreen extends GetView<HomeControllers> {
   const HomeScreen({super.key});
@@ -13,49 +12,88 @@ class HomeScreen extends GetView<HomeControllers> {
     return Scaffold(
       key: controller.scaffoldKey,
       drawer: Drawer(
+        backgroundColor: AppColors.secondary,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(80.0),
             bottomRight: Radius.circular(80.0),
           ),
         ),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(
+                    AppStyles.spaceDefault,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: AppColors.primary,
+                        child: Image.asset(
+                          AppAssets.avatar,
+                          height: 70,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const Text(
+                        "Nate Samson",
+                        style: TextStyle(
+                            color: AppColors.afternoonGrey,
+                            fontSize: AppStyles.spaceDefault + 2),
+                      ),
+                      const Text(
+                        "nate@mail.com",
+                        style: TextStyle(
+                          color: AppColors.afternoonGrey,
+                          fontSize: AppStyles.spaceSmall,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+                const SizedBox(
+                  height: 32,
+                ),
+                const DrawerMenu(
+                  name: "History",
+                  link: AppAssets.history,
+                ),
+                const Divider(),
+                const DrawerMenu(
+                  name: "Complain",
+                  link: AppAssets.complain,
+                ),
+                const Divider(),
+                const DrawerMenu(
+                  name: "Referal",
+                  link: AppAssets.referral,
+                ),
+                const Divider(),
+                const DrawerMenu(
+                  name: "About us",
+                  link: AppAssets.about,
+                ),
+                const Divider(),
+                const DrawerMenu(
+                  name: "Settings",
+                  link: AppAssets.settings,
+                ),
+                const Divider(),
+                const DrawerMenu(
+                  name: "Logout",
+                  link: AppAssets.logout,
+                ),
+                const Divider(),
+              ],
             ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context); // Close the drawer
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                Navigator.pop(context); // Close the drawer
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.exit_to_app),
-              title: const Text('Logout'),
-              onTap: () {
-                Navigator.pop(context); // Close the drawer
-              },
-            ),
-          ],
+          ),
         ),
       ),
       body: IndexedStack(
@@ -95,8 +133,35 @@ class HomeScreen extends GetView<HomeControllers> {
   }
 }
 
+class DrawerMenu extends StatelessWidget {
+  const DrawerMenu({
+    super.key,
+    required this.link,
+    required this.name,
+  });
+  final String name;
+  final String link;
 
-
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      minVerticalPadding: 0,
+      minTileHeight: 40,
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppStyles.spaceDefault,
+      ),
+      leading: MySvgPicture(
+        link,
+        height: AppStyles.spaceDefault,
+      ),
+      title: Text(
+        name,
+        style: const TextStyle(
+            fontSize: AppStyles.spaceSmall, color: AppColors.afternoonGrey),
+      ),
+      onTap: () {
+        Navigator.pop(context); // Close the drawer
+      },
+    );
+  }
+}

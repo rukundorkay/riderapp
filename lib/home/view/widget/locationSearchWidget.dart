@@ -30,9 +30,15 @@ class LocationSearchWidget extends StatelessWidget {
                   color: AppColors.primary,
                 )),
             child: const ListTile(
-              leading: Icon(Icons.search),
-              title: Text("where would you go?"),
-              trailing: Icon(Icons.favorite),
+              leading: MySvgPicture(AppAssets.search, height: 30),
+              title: Text(
+                "where would you go?",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.shadeOFGrey,
+                ),
+              ),
+              trailing: MySvgPicture(AppAssets.heart, height: 30),
             ),
           ),
           const SizedBox(

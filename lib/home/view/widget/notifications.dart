@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:riderapp/shared/assets.dart';
 import 'package:riderapp/shared/styles.dart';
+import 'package:riderapp/shared/widget/svg_picture.dart';
 
 class Notifications extends StatelessWidget {
   const Notifications({
@@ -17,9 +19,9 @@ class Notifications extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(AppStyles.radius)),
           color: AppColors.secondary,
         ),
-        child: const Icon(
-          Icons.notifications,
-          size: 30,
+        child: const MySvgPicture(
+          AppAssets.notification,
+          height: 30,
         ),
       ),
     );

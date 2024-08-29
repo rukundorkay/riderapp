@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riderapp/shared/shared.dart';
-import 'package:riderapp/shared/styles.dart';
 
 /// A [BottomNavigationBar] that shows an icon on non-selected tabs and an icon
 /// as well as a label in a horizontal layout on selected tabs.
@@ -39,39 +38,39 @@ class CustomBottomBar extends StatelessWidget {
     final theme = Theme.of(context);
     const items = [
       CustomBottomBarItem(
-        icon: Icon(
-          Icons.home,
-          size: 20,
+        icon: MySvgPicture(
+          AppAssets.house,
+          height: 30,
         ),
-        title: Text('home'),
+        title: Text('Home'),
       ),
       CustomBottomBarItem(
-        icon: Icon(
-          Icons.favorite,
-          size: 20,
+        icon: MySvgPicture(
+          AppAssets.heart,
+          height: 30,
         ),
-        title: Text('favorites'),
+        title: Text('Favorites'),
       ),
       CustomBottomBarItem(
         icon: Icon(
           Icons.wallet,
           size: 20,
         ),
-        title: Text('Waller'),
+        title: Text('Wallet'),
       ),
       CustomBottomBarItem(
-        icon: Icon(
-          Icons.percent,
-          size: 20,
+        icon: MySvgPicture(
+          AppAssets.discounts,
+          height: 30,
         ),
-        title: Text('favorites'),
+        title: Text('Offer'),
       ),
       CustomBottomBarItem(
-        icon: Icon(
-          Icons.person,
-          size: 20,
+        icon: MySvgPicture(
+          AppAssets.user,
+          height: 30,
         ),
-        title: Text('favorites'),
+        title: Text('Profile'),
       ),
     ];
     return
@@ -159,7 +158,7 @@ class CustomBottomBar extends StatelessWidget {
                                       item.icon,
                                 ),
                                 SizedBox(
-                                  height: 20,
+                                  height: 30,
                                   child: DefaultTextStyle(
                                     style: TextStyle(
                                       color: Color.lerp(

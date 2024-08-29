@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:riderapp/home/home.dart';
 import 'package:riderapp/shared/shared.dart';
@@ -28,6 +27,7 @@ class RentalButton extends StatelessWidget {
                 child: Text(
               "Rental",
               style: TextStyle(
+                fontSize: AppStyles.spaceDefault,
                 color: AppColors.secondary,
               ),
             )),
