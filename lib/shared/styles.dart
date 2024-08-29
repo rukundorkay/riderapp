@@ -4,6 +4,7 @@ class AppColors {
   AppColors._();
 
   static const Color primary = Color(0xff008955);
+  static const Color lightGreen = Color(0xffB9E5D1);
   static const Color secondary = Color(0xffffffff);
   static const Color afternoonGrey = Color(0xff414141);
   static const Color shadeOFGrey = Color(0xffA0A0A0);
@@ -11,6 +12,7 @@ class AppColors {
   static const Color borderGrey = Color(0xffB8B8B8);
   static const Color hintColor = Color(0xffD0D0D0);
   static const Color LightRed = Color(0xffF44336);
+  static const Color veryLightGreen = Color(0xffE2F5ED);
 }
 
 class AppStyles {
