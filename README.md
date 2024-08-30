@@ -51,8 +51,8 @@ lib
 │   ├── view
 │   └── bindings
 ├── shared
-│   ├── utils
-│   ├── functions
+│   ├── services
+│   ├── models
 │   └── widgets
 ```
 
