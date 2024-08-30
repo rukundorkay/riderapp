@@ -1,10 +1,11 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riderapp/home/view/widget/location_input_box.dart';
+import 'package:riderapp/routes/app_pages.dart';
+import 'package:riderapp/shared/assets.dart';
 import 'package:riderapp/shared/styles.dart';
 import 'package:riderapp/shared/widget/appButton.dart';
+import 'package:riderapp/shared/widget/svg_picture.dart';
 
 class LocationBottomSheet extends StatelessWidget {
   const LocationBottomSheet({
@@ -88,17 +89,23 @@ class LocationBottomSheet extends StatelessWidget {
                 const Divider(),
                 const LocationInputBox(
                   hint: "from",
-                  icon: Icon(Icons.pin),
+                  icon: MySvgPicture(
+                    AppAssets.locationFrom,
+                    height: 24,
+                  ),
                 ),
                 const LocationInputBox(
                   hint: "to",
-                  icon: Icon(Icons.pin),
+                  icon: Icon(Icons.pin_drop),
                 ),
                 const Divider(),
-                const Padding(
-                  padding: EdgeInsets.symmetric(
+                Padding(
+                  padding: const EdgeInsets.symmetric(
                       vertical: 32, horizontal: AppStyles.spaceTiny),
                   child: AppButton(
+                    onpressed: () {
+                      Get.toNamed(Routes.selectTransport);
+                    },
                     label: "Next",
                     hasBorder: false,
                   ),

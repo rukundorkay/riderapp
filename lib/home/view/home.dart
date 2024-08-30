@@ -106,26 +106,28 @@ class HomeScreen extends GetView<HomeControllers> {
         children: [
           Stack(
             children: [
-              GoogleMap(
-                initialCameraPosition: const CameraPosition(
-                  target: LatLng(1.9512, 30.0600),
-                  zoom: 12.4746,
+              Obx(
+                () => GoogleMap(
+                  initialCameraPosition: const CameraPosition(
+                    target: LatLng(1.9512, 30.0600),
+                    zoom: 12.4746,
+                  ),
+                  markers: {
+                    Marker(
+                      icon: controller.carIcon.value,
+                      position: const LatLng(1.9512, 30.0600),
+                      markerId: const MarkerId('riderLocation'),
+                      // icon: passangerIcon,
+                      infoWindow: const InfoWindow(
+                        title: 'My Current location',
+                        snippet: 'ME',
+                      ),
+                    )
+                  },
+                  onMapCreated: (controller) {
+                    // controller..complete(controller);
+                  },
                 ),
-                markers: {
-                  Marker(
-                    icon: controller.carIcon.value,
-                    position: const LatLng(1.9512, 30.0600),
-                    markerId: const MarkerId('riderLocation'),
-                    // icon: passangerIcon,
-                    infoWindow: const InfoWindow(
-                      title: 'My Current location',
-                      snippet: 'ME',
-                    ),
-                  )
-                },
-                onMapCreated: (controller) {
-                  // controller..complete(controller);
-                },
               ),
               Menu(controller: controller),
               const Notifications(),

@@ -10,6 +10,7 @@ abstract class Routes {
   static const newPasword = _Paths.newPassword;
   static const home = _Paths.home;
   static const complain = _Paths.complain;
+  static const selectTransport=_Paths.selectTransport;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const newPassword = '/new_password';
   static const home = '/home';
   static const complain = '/complain';
+  static const selectTransport = '/selectTransport';
 }

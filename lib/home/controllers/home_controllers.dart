@@ -12,8 +12,7 @@ class HomeControllers extends GetxController {
   final carIcon = BitmapDescriptor.defaultMarker.obs;
   void setCustomIcon() async {
     // Define sizes based on platform
-    final carSize =
-        Platform.isAndroid ? const Size(10000, 10000) : const Size(200, 200);
+    final carSize = const Size(200, 200);
     try {
       // Load car icon
       final newIcon = await BitmapDescriptor.asset(

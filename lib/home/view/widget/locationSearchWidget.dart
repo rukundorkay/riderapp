@@ -52,7 +52,7 @@ class LocationSearchWidget extends StatelessWidget {
                 title: Text(
                   "where would you go?",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: AppStyles.spaceSmall,
                     color: AppColors.shadeOFGrey,
                   ),
                 ),
