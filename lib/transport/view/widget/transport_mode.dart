@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:riderapp/routes/app_pages.dart';
 import 'package:riderapp/shared/styles.dart';
 import 'package:riderapp/transport/controllers/select_transport.dart';
 
@@ -24,6 +25,7 @@ Widget TransportMode(
           child: InkWell(
             onTap: () {
               controller.selectedTransaport.value = name;
+              Get.toNamed(Routes.availableCars);
             },
             child: Image.asset(imagePath, height: 74, fit: BoxFit.none),
           ),

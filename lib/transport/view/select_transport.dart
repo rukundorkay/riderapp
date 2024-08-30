@@ -42,6 +42,7 @@ class SelectTransportScreen extends GetView<SelectTransportController> {
                   ),
                   TransportMode(AppAssets.bike, 'Bike', controller),
                   TransportMode(
+                    
                     AppAssets.cycle,
                     'Cycle',
                     controller,

@@ -10,7 +10,10 @@ abstract class Routes {
   static const newPasword = _Paths.newPassword;
   static const home = _Paths.home;
   static const complain = _Paths.complain;
-  static const selectTransport=_Paths.selectTransport;
+  static const selectTransport = _Paths.selectTransport;
+  static const availableCars = _Paths.availableCars;
+  static const carDetails = _Paths.carDetails;
+  static const requestSent = _Paths.requestSent;
 }
 
 abstract class _Paths {
@@ -23,4 +26,7 @@ abstract class _Paths {
   static const home = '/home';
   static const complain = '/complain';
   static const selectTransport = '/selectTransport';
+  static const availableCars = '/availableCars';
+  static const carDetails = '/carDetails';
+    static const requestSent = '/requestSent';
 }

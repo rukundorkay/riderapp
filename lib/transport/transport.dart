@@ -5,3 +5,5 @@ export 'view/available_cars.dart';
 export 'view/car_details.dart';
 export 'controllers/select_transport.dart';
 export 'bindings/select_transport.dart';
+export 'bindings/available_cars.dart';
+export 'controllers/available_cars.dart';

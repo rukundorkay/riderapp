@@ -3,7 +3,10 @@ import 'package:riderapp/authentication/authentication.dart';
 import 'package:riderapp/complain/bindings/complain_bindings.dart';
 import 'package:riderapp/complain/view/complain_screen.dart';
 import 'package:riderapp/home/home.dart';
+import 'package:riderapp/transport/bindings/car_details.dart';
+import 'package:riderapp/transport/bindings/request_sent.dart';
 import 'package:riderapp/transport/bindings/select_transport.dart';
+import 'package:riderapp/transport/transport.dart';
 import 'package:riderapp/transport/view/select_transport.dart';
 import 'package:riderapp/onboard/onboard.dart';
 
@@ -52,6 +55,21 @@ class AppPages {
       name: _Paths.selectTransport,
       page: () => const SelectTransportScreen(),
       binding: SelectTransportBindings(),
+    ),
+    GetPage(
+      name: _Paths.availableCars,
+      page: () => const AvaliableCarsScreen(),
+      binding: AvailableCarsBinding(),
+    ),
+    GetPage(
+      name: _Paths.carDetails,
+      page: () => const CarDetails(),
+      binding: CarDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.requestSent,
+      page: () => const RequestSent(),
+      binding: RequestSentBindings(),
     ),
   ];
 

@@ -28,11 +28,14 @@ class AppAssets {
   static const String star = 'assets/svg/star.svg';
   static const String placeIndicate = 'assets/png/placeIndicate.png';
   static const String speed = 'assets/svg/speed.svg';
+  static const String p = 'assets/svg/p.svg';
+  static const String s = 'assets/svg/s.svg';
+  static const String m = 'assets/svg/m.svg';
   static const String maxPower = 'assets/svg/maxPower.svg';
-  static const String redCar = 'assets/svg/redCar.svg';
   static const String locationFrom = 'assets/svg/locationFrom.svg';
   static const String bike = 'assets/png/bike.png';
   static const String car = 'assets/png/car.png';
   static const String cycle = 'assets/png/cycle.png';
   static const String taxi = 'assets/png/taxi.png';
+  static const String redCar = 'assets/png/redCar.png';
 }
