@@ -14,6 +14,7 @@ abstract class Routes {
   static const availableCars = _Paths.availableCars;
   static const carDetails = _Paths.carDetails;
   static const requestSent = _Paths.requestSent;
+  static const success = _Paths.success;
 }
 
 abstract class _Paths {
@@ -28,5 +29,6 @@ abstract class _Paths {
   static const selectTransport = '/selectTransport';
   static const availableCars = '/availableCars';
   static const carDetails = '/carDetails';
-    static const requestSent = '/requestSent';
+  static const requestSent = '/requestSent';
+  static const success = '/success';
 }

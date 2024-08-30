@@ -9,6 +9,7 @@ import 'package:riderapp/transport/bindings/select_transport.dart';
 import 'package:riderapp/transport/transport.dart';
 import 'package:riderapp/transport/view/select_transport.dart';
 import 'package:riderapp/onboard/onboard.dart';
+import 'package:riderapp/transport/view/success.dart';
 
 part 'app_routes.dart';
 
@@ -69,6 +70,11 @@ class AppPages {
     GetPage(
       name: _Paths.requestSent,
       page: () => const RequestSent(),
+      binding: RequestSentBindings(),
+    ),
+    GetPage(
+      name: _Paths.success,
+      page: () => const SuccessScreen(),
       binding: RequestSentBindings(),
     ),
   ];

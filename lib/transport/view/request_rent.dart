@@ -2,6 +2,7 @@ import 'package:another_stepper/another_stepper.dart';
 import 'package:another_stepper/dto/stepper_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:riderapp/routes/app_pages.dart';
 import 'package:riderapp/shared/shared.dart';
 import 'package:riderapp/transport/controllers/request_sent.dart';
 import 'package:riderapp/transport/view/widget/payment_method.dart';
@@ -201,10 +202,13 @@ class RequestSent extends GetView<RequestSentController> {
       bottomSheet: Container(
         padding: const EdgeInsets.all(AppStyles.spaceDefault),
         color: AppColors.secondary,
-        child: const Row(
+        child: Row(
           children: [
             Expanded(
               child: AppButton(
+                onpressed: () {
+                  Get.toNamed(Routes.success);
+                },
                 hasBorder: false,
                 label: 'Confirm Ride',
               ),
@@ -215,4 +219,3 @@ class RequestSent extends GetView<RequestSentController> {
     );
   }
 }
-
