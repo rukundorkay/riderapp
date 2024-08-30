@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:riderapp/shared/shared.dart';
 
@@ -32,11 +31,11 @@ class Specs extends StatelessWidget {
               child: Icon(
                 icon,
                 color: AppColors.afternoonGrey,
-                size: 22,
+                size: 16,
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
+          const SizedBox(height: 1.0),
           Text(
             label,
             style: const TextStyle(

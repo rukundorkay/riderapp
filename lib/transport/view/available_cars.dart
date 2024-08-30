@@ -51,9 +51,9 @@ class AvaliableCarsScreen extends GetView<AvailableCarsController> {
                       )),
                   child: Column(
                     children: [
-                      const Row(
+                      Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             flex: 2,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,8 +83,8 @@ class AvaliableCarsScreen extends GetView<AvailableCarsController> {
                             ),
                           ),
                           Expanded(
-                              child:
-                                  MySvgPicture(AppAssets.bookCar, height: 80))
+                            child: Image.asset(AppAssets.redCar),
+                          )
                         ],
                       ),
                       const SizedBox(

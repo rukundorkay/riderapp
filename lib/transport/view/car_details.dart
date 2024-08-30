@@ -137,7 +137,7 @@ class CarDetails extends GetView<CarDetailsController> {
                 ),
               ),
               const SizedBox(
-                height: 32,
+                height: 900,
               )
             ],
           ),
